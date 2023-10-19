@@ -128,12 +128,11 @@ void Inventory::display_Apple_products() // funciton to display products to then
     initializeInventory(current_user_name); // allowing user to perform invenotry fucniton based on the username
 }
 
-
-
-void Inventory::autofill_inventory()
+void Inventory::autofill_inventory() // auto fill invenotry to display how to remove and add certian products
 {
-    iPhone *iphone = new iPhone();
+    iPhone *iphone = new iPhone(); // allocate iphone in new object 
 
+    // using pointer to set an iphone object to all these variables 
     iphone->set_product_type_id(1);
     iphone->set_model("iPhone 12");
     iphone->set_price(1000);
@@ -145,7 +144,7 @@ void Inventory::autofill_inventory()
     iphone->set_storage_size(128);
     iphone->set_wireless_charging(true);
 
-    Apple_products.push_back(iphone);
+    Apple_products.push_back(iphone); // iphone objects is ablle to apple products in inventory
 
     iPad *ipad = new iPad();
     ipad->set_product_type_id(2);
@@ -163,7 +162,7 @@ void Inventory::autofill_inventory()
     ipad->set_generation(12);
     ipad->set_processor("intel");
 
-    Apple_products.push_back(ipad);
+    Apple_products.push_back(ipad); // ipad objects is ablle to apple products in inventory
 
     MacBook *mac = new MacBook();
     mac->set_product_type_id(3);
@@ -183,13 +182,13 @@ void Inventory::autofill_inventory()
     mac->set_mag_safe(true);
     mac->set_touch_bar(true);
 
-    Apple_products.push_back(mac);
+    Apple_products.push_back(mac); // macbook objects is ablle to apple products in inventory
 
-    initializeInventory(current_user_name);
+    initializeInventory(current_user_name); // allowing user to perform invenotry fucniton based on the username
 }
 
 void Inventory::add_products()
-{
+{   // prompt to choose which product user would like to add 
     std::cout << "Please select a product you want to add:" << std::endl;
     std::cout << "1. iPhone" << std::endl;
     std::cout << "2. iPad" << std::endl;
@@ -205,15 +204,16 @@ void Inventory::add_products()
         return;
     }
 
-    switch (user_input)
+    switch (user_input) // case switch based on product
     {
     case 1:
     {
-
+        // adding for new iphone
         std::cout << "Add new iPhone" << std::endl;
         iPhone *iphone = new iPhone();
-        iphone->set_product_type_id(1);
+        iphone->set_product_type_id(1); // creaite id for iphone object
 
+        // inputting the model 
         std::string user_input_model;
         std::cout << "Enter model: ";
         std::cin.ignore();
@@ -225,22 +225,22 @@ void Inventory::add_products()
             break;
         }
 
-        iphone->set_model(user_input_model);
+        iphone->set_model(user_input_model); // pointer to set model
 
         int user_input_price;
-        std::cout << "Enter price: ";
+        std::cout << "Enter price: "; // inputting price 
         std::cin >> user_input_price;
 
-        if (std::cin.fail() || user_input_price <= 0)
+        if (std::cin.fail() || user_input_price <= 0) 
         {
             invalidInput();
             break;
         }
 
-        iphone->set_price(user_input_price);
+        iphone->set_price(user_input_price); // poitner to set price 
 
         int user_input_availability;
-        std::cout << "Enter availability: ";
+        std::cout << "Enter availability: "; // inputting availability
         std::cin >> user_input_availability;
 
         if (std::cin.fail() || user_input_availability <= 0)
@@ -249,10 +249,10 @@ void Inventory::add_products()
             break;
         }
 
-        iphone->set_availability(user_input_availability);
+        iphone->set_availability(user_input_availability); // pointer to set availability
 
         int user_input_battery_health;
-        std::cout << "Enter battery health: ";
+        std::cout << "Enter battery health: ";  // input battery
         std::cin >> user_input_battery_health;
 
         if (std::cin.fail() || user_input_battery_health <= 0)
@@ -261,7 +261,7 @@ void Inventory::add_products()
             break;
         }
 
-        iphone->set_battery_health(user_input_battery_health);
+        iphone->set_battery_health(user_input_battery_health); // pointer to set battery
 
         int user_input_storage_size;
         std::cout << "Enter storage size: ";
@@ -300,7 +300,7 @@ void Inventory::add_products()
         break;
     }
 
-    case 2:
+    case 2: // adding new ipad 
     {
 
         std::cout << "Add new iPad" << std::endl;
@@ -403,8 +403,10 @@ void Inventory::add_products()
         std::getline(std::cin, user_input_processor);
         ipad->set_processor(user_input_processor);
 
+        // new products added as ipad
+
         char user_input_Apple_pencil;
-        std::cout << "Enter apple pencil [y/n]: ";
+        std::cout << "Enter apple pencil [y/n]: "; 
         std::cin >> user_input_Apple_pencil;
         ipad->set_Apple_pencil(user_input_Apple_pencil == 'y' || user_input_Apple_pencil == 'Y');
 
@@ -419,7 +421,7 @@ void Inventory::add_products()
         break;
     }
 
-    case 3:
+    case 3: // same code but for macbook implemntaiton 
     {
 
         std::cout << "Add new Macbook" << std::endl;
@@ -522,6 +524,8 @@ void Inventory::add_products()
         std::getline(std::cin, user_input_processor);
         mac->set_processor(user_input_processor);
 
+
+        // new products added as macbook and therfore bool
         char user_input_Apple_pencil;
         std::cout << "Enter apple pencil [y/n]: ";
         std::cin >> user_input_Apple_pencil;
@@ -660,7 +664,7 @@ void Inventory::update_products(int updateType)
         default:
             break;
         }
-
+// choice on what ot update 
         int choice = 0;
         std::cout << "Enter your choice: ";
         while (!(std::cin >> choice) || choice <= 0 || choice > maxPropertyCount)
@@ -670,7 +674,7 @@ void Inventory::update_products(int updateType)
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
 
-        switch (choice)
+        switch (choice) // switch case for each choice 
         {
         case 1:
         {
