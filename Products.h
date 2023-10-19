@@ -3,12 +3,13 @@
 
 #include <string>
 
-class Products {
-public:
-    Products();
-    virtual ~Products() = default;
+class Products { // parent class
+public: 
+    Products(); // constructor for parent class products
+    virtual ~Products() = default; // virtual destructor for the Products class.
 
-    int get_product_type_id() const;
+    // fucntion getters to recive informatioin 
+    int get_product_type_id() const; 
     int get_availability() const;
     double get_price() const;
     const std::string& get_condition() const;
@@ -17,6 +18,7 @@ public:
     int get_storage_size() const;
     const std::string& get_colours() const;
 
+    // funciton setters to set informaiton about products
     void set_product_type_id(int val);
     void set_availability(int val);
     void set_price(double val);
@@ -25,8 +27,8 @@ public:
     void set_software_generation(const std::string& val);
     void set_storage_size(int val);
     void set_colours(const std::string& val);
-
-private:
+    
+private: // private data mameber to store product variables ranging from product type, avalaiblity, price, condidion, battery health, software generation, stroage size and colours 
     int product_type_id;
     int availability;
     double price;
@@ -37,4 +39,4 @@ private:
     std::string colours;
 };
 
-#endif // PRODUCTS_H
+#endif 
