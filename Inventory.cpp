@@ -1,3 +1,4 @@
+// including all header class files 
 #include "Inventory.h"
 #include "iPhone.h"
 #include "MacBook.h"
@@ -5,48 +6,48 @@
 #include <iostream>
 #include <limits>
 
-Inventory::Inventory() {}
+Inventory::Inventory() {} // constructor for inventory class
 
-void Inventory::display_Apple_products()
+void Inventory::display_Apple_products() // funciton to display products to then be used in the interface
 {
 
-    if (Apple_products.empty())
+    if (Apple_products.empty()) // what happens if there are not products to view
     {
-        std::cout << "No products to show. Do you want to add some products? [y/n]: ";
-        char answer;
+        std::cout << "No products to show. Do you want to add some products? [y/n]: "; // give option to view products
+        char answer; 
         std::cin >> answer;
 
-        if (answer != 'y' && answer != 'n')
+        if (answer != 'y' && answer != 'n') // if the answer is yes it runs to add products funcitons
         {
             std::cout << "Invalid input." << std::endl;
         }
 
         if (answer == 'y')
         {
-            add_products();
+            add_products(); // goes to add products functioins 
         }
         else
         {
-            exit(0);
+            exit(0); // if it is no the program goes back
         }
     }
     else
     {
-        for (size_t i = 0; i < Apple_products.size(); i++)
-        {
+        for (size_t i = 0; i < Apple_products.size(); i++) /// Iterate through the Apple products in the inventory.
+        { 
             std::cout << "--------------------------------------------------------------" << std::endl;
-            std::cout << "product index: " << i << std::endl;
+            std::cout << "product index: " << i << std::endl; // a value is given for each product object to then be eaisly accseissble 
             std::cout << "--------------------------------------------------------------" << std::endl;
 
-            Products *product = Apple_products[i];
+            Products *product = Apple_products[i]; // Get the current product.
 
-            switch (Apple_products[i]->get_product_type_id())
+            switch (Apple_products[i]->get_product_type_id()) // able to set based on product type
             {
-
-            case 1: // iphone
+            // pointers within each variable to assign required spesifcation to spesific variables
+            case 1: // iphone infomraiton 
             {
-                std::string product_type = "iPhone";
-                iPhone *apple_iphone = dynamic_cast<iPhone *>(product);
+                std::string product_type = "iPhone"; // intialise iphone 
+                iPhone *apple_iphone = dynamic_cast<iPhone *>(product); // pointed to derived class iphone and allow apple_iphone point to the object being/is created
 
                 std::cout << "product_type: " << product_type << std::endl;
                 std::cout << "model: " << apple_iphone->get_model() << std::endl;
@@ -58,20 +59,20 @@ void Inventory::display_Apple_products()
                 std::cout << "storage_size: " << apple_iphone->get_storage_size() << std::endl;
                 std::cout << "colours: " << apple_iphone->get_colours() << std::endl;
                 std::cout << "wireless_charging: " << (apple_iphone->check_wireless_charging() ? "Yes" : "No") << std::endl;
-                std::cout << "generation: N/A" << std::endl;
-                std::cout << "processor: N/A" << std::endl;
-                std::cout << "Apple_pencil: N/A" << std::endl;
-                std::cout << "magic_keyboard: N/A" << std::endl;
-                std::cout << "touch_bar: N/A" << std::endl;
-                std::cout << "mag_safe: N/A" << std::endl;
+                std::cout << "generation: N/A" << std::endl; // information is N/A as only introduced in later inheritaed products
+                std::cout << "processor: N/A" << std::endl; // information is N/A as only introduced in later inheritaed products
+                std::cout << "Apple_pencil: N/A" << std::endl; // information is N/A as only introduced in later inheritaed products
+                std::cout << "magic_keyboard: N/A" << std::endl; // information is N/A as only introduced in later inheritaed products
+                std::cout << "touch_bar: N/A" << std::endl; // information is N/A as only introduced in later inheritaed products
+                std::cout << "mag_safe: N/A" << std::endl; // information is N/A as only introduced in later inheritaed products
 
                 break;
             }
 
             case 2: // ipad
             {
-                std::string product_type = "iPad";
-                iPad *apple_ipad = dynamic_cast<iPad *>(product);
+                std::string product_type = "iPad"; // inislaise iPad
+                iPad *apple_ipad = dynamic_cast<iPad *>(product); // pointed to derived class ipad and allow apple_ipad point to the object being/is created
 
                 std::cout << "product_type: " << product_type << std::endl;
                 std::cout << "model: " << apple_ipad->get_model() << std::endl;
@@ -87,16 +88,17 @@ void Inventory::display_Apple_products()
                 std::cout << "processor: " << apple_ipad->get_processor() << std::endl;
                 std::cout << "Apple_pencil: " << apple_ipad->check_Apple_pencil() << std::endl;
                 std::cout << "magic_keyboard: " << apple_ipad->check_magic_keyboard() << std::endl;
-                std::cout << "touch_bar: N/A" << std::endl;
-                std::cout << "mag_safe: N/A" << std::endl;
+                std::cout << "touch_bar: N/A" << std::endl; // information is N/A as only introduced in later inheritaed products
+                std::cout << "mag_safe: N/A" << std::endl; // information is N/A as only introduced in later inheritaed products
 
                 break;
             }
 
             case 3: // mac
             {
-                std::string product_type = "MacBook";
-                MacBook *apple_mac = dynamic_cast<MacBook *>(product);
+                std::string product_type = "MacBook"; // initalise macbook
+                MacBook *apple_mac = dynamic_cast<MacBook *>(product); // pointed to derived class macbook and allow apple_macbook point to the object being/is created
+
 
                 std::cout << "product_type: " << product_type << std::endl;
                 std::cout << "model: " << apple_mac->get_model() << std::endl;
@@ -123,7 +125,7 @@ void Inventory::display_Apple_products()
             }
         }
     }
-    initializeInventory(current_user_name);
+    initializeInventory(current_user_name); 
 }
 
 void Inventory::search_products(const std::string &value)
