@@ -1,22 +1,21 @@
-#include "iPhone.h"
+#include "iPhone.h" // access the iphone header
 
-// Constructor
-iPhone::iPhone() {
-    // Initialize the base class constructor if needed
+iPhone::iPhone() { // constructor for iphone class 
 }
 
+
 std::string iPhone::get_model() const {
-    return model;
+    return model;  // Member function to get the iPhone model.
 }
 
 void iPhone::set_model(const std::string& val) {
-    model = val;
+    model = val;  // Member function to set the iPhone model to the provided value.
 }
 
 bool iPhone::check_wireless_charging() const {
-    return wireless_charging;
+    return wireless_charging;  // Member function to check if the iPhone has wireless charging.
 }
 
 void iPhone::set_wireless_charging(bool val) {
-    wireless_charging = val;
+    wireless_charging = val;  // Member function to set the wireless charging status of the iPhone.
 }
