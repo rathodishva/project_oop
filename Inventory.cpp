@@ -125,14 +125,10 @@ void Inventory::display_Apple_products() // funciton to display products to then
             }
         }
     }
-    initializeInventory(current_user_name); 
+    initializeInventory(current_user_name); // allowing user to perform invenotry fucniton based on the username
 }
 
-void Inventory::search_products(const std::string &value)
-{
-    std::cout << "Display all search results." << std::endl;
-    // Implement search logic as needed
-}
+
 
 void Inventory::autofill_inventory()
 {
