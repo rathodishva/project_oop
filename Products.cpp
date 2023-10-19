@@ -1,7 +1,8 @@
-#include "Products.h"
+#include "Products.h" // include definitions from .h file
 
 Products::Products()
-    : product_type_id(0),
+    // inilaise the variety of varaibles
+    : product_type_id(0), 
       availability(0),
       price(0.0),
       condition(""),
@@ -11,6 +12,7 @@ Products::Products()
       colours("") {
 }
 
+// returned the various insilaised variables
 int Products::get_product_type_id() const {
     return product_type_id;
 }
@@ -55,6 +57,7 @@ void Products::set_price(double val) {
     price = val;
 }
 
+// set values with the apporprate data types for each variable
 void Products::set_condition(const std::string& val) {
     condition = val;
 }
