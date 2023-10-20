@@ -1,0 +1,91 @@
+Upon running code:
+----------------------------------------
+Welcome to Apple Inventory
+Please enter your employee id: 
+----------------------------------------
+Input: 333
+----------------------------------------
+Output:
+
+Welcome Ishva
+----
+Select activity number you want to perform:
+1. View all products
+2. Add new product
+3. Remove from current products
+4. Update product information
+5. Update product quantity
+6. Autofill inventory
+7. Exit
+Please enter your choice: 
+----------------------------------------
+Input: 6
+----------------------------------------
+Output:
+
+You selected option 6. Autofill inventory
+
+Welcome Ishva
+----
+Select activity number you want to perform:
+1. View all products
+2. Add new product
+3. Remove from current products
+4. Update product information
+5. Update product quantity
+6. Autofill inventory
+7. Exit
+Please enter your choice: 
+----------------------------------------
+Input: 3
+----------------------------------------
+Output:
+
+You selected option 3. Remove product
+Enter the product index you want to remove: 2
+Product removed.
+--------------------------------------------------------------
+product index: 0
+--------------------------------------------------------------
+product_type: iPhone
+model: iPhone 12
+availability: 200
+price: 1000
+condition: excellent
+battery_health: 98
+software_generation: iOS 14
+storage_size: 128
+colours: pink
+wireless_charging: Yes
+generation: N/A
+processor: N/A
+Apple_pencil: N/A
+magic_keyboard: N/A
+touch_bar: N/A
+mag_safe: N/A
+--------------------------------------------------------------
+product index: 1
+--------------------------------------------------------------
+product_type: iPad
+model: ipad 12
+availability: 200
+price: 1000
+condition: excellent
+battery_health: 98
+software_generation: ios 14
+storage_size: 128
+colours: pink
+wireless_charging: Yes
+generation: 12
+processor: intel
+Apple_pencil: 1
+magic_keyboard: 1
+touch_bar: N/A
+mag_safe: N/A
+--------------------------------------------------------------
+Input: 7
+--------------------------------------------------------------
+Output:
+
+Exiting the program...
+--------------------------------------------------------------

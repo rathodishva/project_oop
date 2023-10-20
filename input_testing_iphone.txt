@@ -1,0 +1,69 @@
+Upon running code:
+----------------------------------------
+Welcome to Apple Inventory
+Please enter your employee id: 
+----------------------------------------
+Input: 111
+----------------------------------------
+Output:
+
+Welcome Tirth
+----
+Select activity number you want to perform:
+1. View all products
+2. Add new product
+3. Remove from current products
+4. Update product information
+5. Update product quantity
+6. Autofill inventory
+7. Exit
+Please enter your choice: 
+----------------------------------------
+Input: 1
+----------------------------------------
+Output:
+
+You selected option 1. View all products
+No products to show. Do you want to add some products? [y/n]: 
+----------------------------------------
+Input: y
+----------------------------------------
+Output:
+
+Please select a product you want to add:
+1. iPhone
+2. iPad
+3. MacBook
+----------------------------------------
+Input: 1
+----------------------------------------
+Output & Input:
+
+Add new iPhone
+Enter model: 15 Pro Max
+Enter price: 2199
+Enter availability: 12
+Enter battery health: 100
+Enter storage size: 128
+Enter colour: Blue
+Enter condition: Pristine
+Enter software generation: Ios 19.5
+Enter wireless charging [y/n]: y
+----------------------------------------
+Output:
+
+Select activity number you want to perform:
+1. View all products
+2. Add new product
+3. Remove from current products
+4. Update product information
+5. Update product quantity
+6. Autofill inventory
+7. Exit
+Please enter your choice: 
+----------------------------------------
+Input: 7
+----------------------------------------
+Output: 
+Exiting the program...
+----------------------------------------
