@@ -1,0 +1,2 @@
+apple_system: Employee.cpp Inventory.cpp iPad.cpp iPhone.cpp MacBook.cpp main.cpp Products.cpp Utils.cpp
+	g++ Employee.cpp Inventory.cpp iPad.cpp iPhone.cpp MacBook.cpp main.cpp Products.cpp Utils.cpp -o apple_system
